@@ -1,41 +1,52 @@
 import 'package:final_task/utils/charts_assets.dart';
-import 'package:final_task/widgets/small_info_card.dart';
+import 'package:final_task/widgets/info_card.dart';
 import 'package:flutter/material.dart';
 
-class LargeInfoCardsListBuilder extends StatelessWidget {
-  const LargeInfoCardsListBuilder({super.key});
-  static List<InfoCardWidget> cards = [
-    InfoCardWidget(image: ChartsAssets.salesSummary, height: 328),
-    InfoCardWidget(image: ChartsAssets.orderVolume, height: 328),
-  ];
+class InfoCardsListBuilder extends StatelessWidget {
+  const InfoCardsListBuilder({
+    super.key,
+    required this.cards,
+    required this.aspectRatio,
+  });
+  final double aspectRatio;
+  // static List<InfoCardWidget> cards = [
+  //   InfoCardWidget(image: ChartsAssets.salesSummary),
+  //   InfoCardWidget(image: ChartsAssets.orderVolume),
+  // ];
+  final List<InfoCardWidget> cards;
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        const crossAxisCount = 2;
-        const crossAxisSpacing = 24.0;
-        const mainAxisSpacing = 16.0;
-        final cardWidth = (constraints.maxWidth -
-                (crossAxisCount - 1) * crossAxisSpacing) /
-            crossAxisCount;
-        final cardHeight = cardWidth * 0.65;
-        final childAspectRatio = cardWidth / cardHeight;
-
-        return GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: childAspectRatio,
-            crossAxisCount: crossAxisCount,
-            crossAxisSpacing: crossAxisSpacing,
-            mainAxisSpacing: mainAxisSpacing,
-          ),
-          itemBuilder: (context, index) {
-            return cards[index];
-          },
-          itemCount: cards.length,
-        );
+    return
+    //  LayoutBuilder(
+    //   builder: (BuildContext context, BoxConstraints constraints) {
+    //     return
+    //     ListView.builder(
+    //       shrinkWrap: true,
+    //       physics: NeverScrollableScrollPhysics(),
+    //       scrollDirection: Axis.horizontal,
+    //       itemBuilder: (context, index) {
+    //         return SizedBox(
+    //           width: constraints.maxWidth / cards.length,
+    //           child: cards[index],
+    //         );
+    //       },
+    //       itemCount: cards.length,
+    //     );
+    //   },
+    // );
+    GridView.builder(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        childAspectRatio: aspectRatio,
+        crossAxisCount: cards.length,
+        crossAxisSpacing: 24,
+        mainAxisSpacing: 12,
+      ),
+      itemBuilder: (context, index) {
+        return cards[index];
       },
+      itemCount: cards.length,
     );
   }
 }

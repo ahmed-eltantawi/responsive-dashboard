@@ -1,9 +1,8 @@
 import 'package:final_task/layout/adaptive_layout.dart';
 import 'package:final_task/layout/desktop_layout.dart';
+import 'package:final_task/layout/tablet_layout.dart';
 import 'package:final_task/utils/const_colors.dart';
-import 'package:final_task/utils/images_assets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -17,7 +16,7 @@ class HomeView extends StatelessWidget {
           return Text('This is moblie layout');
         },
         tabletLayout: (context) {
-          return Center(child: SvgPicture.asset(ImagesAssets.companyLogo));
+          return TabletLayout();
         },
         diskTopLayout: (context) => DeskTopLayout(),
       ),
