@@ -4,19 +4,19 @@ import 'package:final_task/widgets/desktop_drawer_item.dart';
 import 'package:final_task/widgets/selectedDrawerItem.dart';
 import 'package:flutter/material.dart';
 
-class DrawerListView extends StatefulWidget {
-  const DrawerListView({super.key});
+class DrawerList extends StatefulWidget {
+  const DrawerList({super.key});
 
   @override
-  State<DrawerListView> createState() => _DrawerListViewState();
+  State<DrawerList> createState() => _DrawerListState();
 }
 
 int selectedIndex = 0;
 
-class _DrawerListViewState extends State<DrawerListView> {
+class _DrawerListState extends State<DrawerList> {
   @override
   Widget build(BuildContext context) {
-    List<DrawerItemModel> drawerItems = [
+    final List<DrawerItemModel> drawerItems = const [
       DrawerItemModel(icon: Assets.iconsOverview, title: 'Overview'),
       DrawerItemModel(icon: Assets.iconsProducts, title: 'Products'),
       DrawerItemModel(icon: Assets.iconsOrders, title: 'Orders'),

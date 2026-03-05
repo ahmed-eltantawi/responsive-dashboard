@@ -1,15 +1,20 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:final_task/home_view.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyDashBoardAppApp());
-}
+void main() => runApp(
+  DevicePreview(
+    enabled: !kReleaseMode,
+    builder: (context) => MyDashBoardAppApp(),
+  ),
+);
 
 class MyDashBoardAppApp extends StatelessWidget {
   const MyDashBoardAppApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomeView());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomeView());
   }
 }

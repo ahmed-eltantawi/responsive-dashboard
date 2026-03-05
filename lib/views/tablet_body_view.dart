@@ -4,8 +4,8 @@ import 'package:final_task/widgets/bottom_widget.dart';
 import 'package:final_task/widgets/search_bar_widget.dart';
 import 'package:flutter/material.dart';
 
-class DesktopBodyView extends StatelessWidget {
-  const DesktopBodyView({super.key});
+class TabletBodyView extends StatelessWidget {
+  const TabletBodyView({super.key});
 
   @override
   Widget build(BuildContext context) {

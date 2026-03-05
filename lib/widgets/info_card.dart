@@ -6,6 +6,6 @@ class InfoCardWidget extends StatelessWidget {
   final String image;
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(image);
+    return FittedBox(child: SvgPicture.asset(image));
   }
 }

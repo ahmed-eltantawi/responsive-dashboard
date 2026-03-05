@@ -6,6 +6,9 @@ class Assets {
   /// assets/icons/active_bill.svg
   static const String iconsActiveBill = "assets/icons/active_bill.svg";
 
+  static const String iconsWhiteActiveBill =
+      "assets/icons/white_active_bill.svg";
+
   /// Assets for iconsAdminstration
   /// assets/icons/adminstration.svg
   static const String iconsAdministration = "assets/icons/adminstration.svg";
@@ -49,6 +52,8 @@ class Assets {
   /// Assets for iconsSearch
   /// assets/icons/search.svg
   static const String iconsSearch = "assets/icons/search.svg";
+
+  static const String iconsWhiteSearch = "assets/icons/white_search.svg";
 
   /// Assets for iconsSettings
   /// assets/icons/settings.svg
