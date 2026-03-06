@@ -4,6 +4,12 @@ A **Flutter** dashboard application built as a training project to practice **Re
 
 ---
 
+<p align="center">
+  <img src="assets/screenshots/final.png" alt="Desktop View"  height="800"/>
+</p>
+
+---
+
 ## ✨ Features
 
 - 🖥️ **Desktop Layout** — Full sidebar navigation with expanded dashboard view
